@@ -1,0 +1,46 @@
+Git LFS upload missing objects:
+  (missing) public/models/character.glb (c287a4d10bbbbc4c779f7b0a68b666b530ef9754142843aa048b4d5976c0d052)
+Uploading LFS objects:   0% (0/1), 0 B | 0 B/s, done.
+git : remote: error: 
+GH008: Your push 
+referenced at least 
+1 unknown Git LFS 
+object:        
+At line:1 char:1
++ git push -f origin 
+temp-clean > 
+push_error_2.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (remote:   
+  error: ...objec    
+t:        :Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+remote:     c287a4d10
+bbbbc4c779f7b0a68b666
+b530ef9754142843aa048
+b4d5976c0d052        
+remote: Try to push 
+them with 'git lfs 
+push --all'.        
+To https://github.com
+/harsh2005-bit/New-Po
+rtfolio.git
+ ! [remote rejected] 
+temp-clean -> 
+temp-clean 
+(pre-receive hook 
+declined)
+error: failed to 
+push some refs to 'ht
+tps://github.com/hars
+h2005-bit/New-Portfol
+io.git'
