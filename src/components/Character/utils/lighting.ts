@@ -19,7 +19,7 @@ const setLighting = (scene: THREE.Scene) => {
   scene.add(pointLight);
 
   /* Fallback ambient light (hidden by default) */
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0);
+  const ambientLight = new THREE.AmbientLight(0xb08bff, 0); // Purple fallback
   scene.add(ambientLight);
 
   new RGBELoader()
