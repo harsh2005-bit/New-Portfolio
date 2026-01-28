@@ -18,14 +18,27 @@ const setLighting = (scene: THREE.Scene) => {
   pointLight.castShadow = true;
   scene.add(pointLight);
 
+  /* Fallback ambient light (hidden by default) */
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0);
+  scene.add(ambientLight);
+
   new RGBELoader()
-    .setPath("/models/")
-    .load("char_enviorment.hdr", function (texture) {
-      texture.mapping = THREE.EquirectangularReflectionMapping;
-      scene.environment = texture;
-      scene.environmentIntensity = 0;
-      scene.environmentRotation.set(5.76, 85.85, 1);
-    });
+    .setPath(import.meta.env.BASE_URL + "models/")
+    .load(
+      "char_enviorment.hdr",
+      function (texture) {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        scene.environment = texture;
+        scene.environmentIntensity = 0;
+        scene.environmentRotation.set(5.76, 85.85, 1);
+      },
+      undefined,
+      function (error) {
+        console.error("Failed to load environment map:", error);
+        // Fallback: boost ambient light if env fails
+        ambientLight.intensity = 1;
+      }
+    );
 
   function setPointLight(screenLight: any) {
     if (screenLight.material.opacity > 0.9) {
